@@ -9,17 +9,14 @@ export default function Pay() {
     const [price, setPrice] = useState<number[]>([]);
 
     useEffect(() => {
-        function a() {
-            choosenSeats.map((data: any) => {
-                data.table < 7
-                    ? setPrice((prev) => [...prev, 250000])
-                    : setPrice((prev) => [...prev, 150000]);
-            });
-        }
-        a();
+        const newPrices = choosenSeats.map((data:any) =>
+            data.table < 7 ? 250000 : 150000
+        );
+        console.log(newPrices)
+        setPrice(newPrices);
     }, []);
     
-    const total = price.reduce((acc, num) => acc + num, 0);
+    let total = price.reduce((acc, num) => acc + num, 0);
     console.log(total);
 
     return (
