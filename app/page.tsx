@@ -49,7 +49,7 @@ export default function Home() {
 
         if (table !== undefined && table < 4) {
             setVip1((prev) => {
-                return prev.map((data, index) => {
+                return prev.map((data) => {
                     if (data.id != table) {
                         return data;
                     } else {
@@ -66,7 +66,7 @@ export default function Home() {
         }
         if (table !== undefined && table < 7) {
             setVip2((prev) => {
-                return prev.map((data, index) => {
+                return prev.map((data) => {
                     if (data.id != table) {
                         return data;
                     } else {
@@ -83,7 +83,7 @@ export default function Home() {
         }
         if (table !== undefined && table > 6) {
             setReg((prev) => {
-                return prev.map((data, index) => {
+                return prev.map((data) => {
                     if (data.id != table) {
                         return data;
                     } else {
@@ -128,7 +128,7 @@ export default function Home() {
                 <div
                     className={`z-10 bg-slate-800/80 w-[100%] h-[100%] fixed top-0 left-0 ${
                         vipClick ? "fixed" : "hidden"
-                    }`}
+                    } `}
                     onClick={handleExitPop}
                 >
                     <div
@@ -196,7 +196,7 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="w-full h-40 bg-table-vip flex items-center justify-center font-bold text-2xl text-text">
-                                VIP
+                               {table} VIP
                             </div>
                             <div id="chair" className="flex justify-between">
                                 <div
@@ -274,7 +274,7 @@ export default function Home() {
                                         className="flex justify-between"
                                     >
                                         <div
-                                            className={` w-15 h-8 rounded-t-lg text-center ${
+                                            className={` w-15 h-8 rounded-t-lg text-center  transition-all duration-300 ${
                                                 table.seat[1]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -283,7 +283,7 @@ export default function Home() {
                                             1
                                         </div>
                                         <div
-                                            className={` w-15 h-8 rounded-t-lg text-center ${
+                                            className={` w-15 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                                 table.seat[2]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -292,7 +292,7 @@ export default function Home() {
                                             2
                                         </div>
                                         <div
-                                            className={` w-15 h-8 rounded-t-lg text-center ${
+                                            className={` w-15 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                                 table.seat[3]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -309,7 +309,7 @@ export default function Home() {
                                         className="flex justify-between"
                                     >
                                         <div
-                                            className={` w-15 h-8 rounded-b-lg text-center ${
+                                            className={` w-15 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                                 table.seat[4]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -318,7 +318,7 @@ export default function Home() {
                                             4
                                         </div>
                                         <div
-                                            className={` w-15 h-8 rounded-b-lg text-center ${
+                                            className={` w-15 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                                 table.seat[5]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -327,7 +327,7 @@ export default function Home() {
                                             5
                                         </div>
                                         <div
-                                            className={` w-15 h-8 rounded-b-lg text-center ${
+                                            className={` w-15 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                                 table.seat[6]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -364,7 +364,7 @@ export default function Home() {
                                         className="flex justify-between"
                                     >
                                         <div
-                                            className={` w-15 h-8 rounded-t-lg text-center ${
+                                            className={` w-15 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                                 table.seat[1]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -373,7 +373,7 @@ export default function Home() {
                                             1
                                         </div>
                                         <div
-                                            className={` w-15 h-8 rounded-t-lg text-center ${
+                                            className={` w-15 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                                 table.seat[2]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -382,7 +382,7 @@ export default function Home() {
                                             2
                                         </div>
                                         <div
-                                            className={` w-15 h-8 rounded-t-lg text-center ${
+                                            className={` w-15 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                                 table.seat[3]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -399,7 +399,7 @@ export default function Home() {
                                         className="flex justify-between"
                                     >
                                         <div
-                                            className={` w-15 h-8 rounded-b-lg text-center ${
+                                            className={` w-15 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                                 table.seat[4]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -408,7 +408,7 @@ export default function Home() {
                                             4
                                         </div>
                                         <div
-                                            className={` w-15 h-8 rounded-b-lg text-center ${
+                                            className={` w-15 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                                 table.seat[5]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -417,7 +417,7 @@ export default function Home() {
                                             5
                                         </div>
                                         <div
-                                            className={` w-15 h-8 rounded-b-lg text-center ${
+                                            className={` w-15 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                                 table.seat[6]
                                                     ? "bg-reserved"
                                                     : "bg-chair-vip"
@@ -433,8 +433,6 @@ export default function Home() {
                     {/* end right side */}
                 </div>
             </div>
-
-            {/* start regular */}
 
             {/* start pop-up  */}
             <div
@@ -491,7 +489,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="w-full h-40 bg-table-reg flex items-center justify-center font-bold text-2xl text-slate-800">
-                            Regular
+                           {table} Regular
                         </div>
                         <div id="chair" className="flex justify-between">
                             <div
@@ -540,6 +538,7 @@ export default function Home() {
             </div>
             {/* end pop-up  */}
 
+            {/* start regular */}
             <div className="bg-background w-full  px-20 py-10 grid grid-cols-4 gap-10">
                 {/* start regular */}
                 {reg.map((table, index) => {
@@ -551,7 +550,7 @@ export default function Home() {
                         >
                             <div id="chair" className="flex justify-between">
                                 <div
-                                    className={` w-12 h-8 rounded-t-lg text-center ${
+                                    className={` w-12 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                         table.seat[1]
                                             ? "bg-reserved"
                                             : "bg-chair-reg"
@@ -560,7 +559,7 @@ export default function Home() {
                                     1
                                 </div>
                                 <div
-                                    className={` w-12 h-8 rounded-t-lg text-center ${
+                                    className={` w-12 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                         table.seat[2]
                                             ? "bg-reserved"
                                             : "bg-chair-reg"
@@ -569,7 +568,7 @@ export default function Home() {
                                     2
                                 </div>
                                 <div
-                                    className={` w-12 h-8 rounded-t-lg text-center ${
+                                    className={` w-12 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                         table.seat[3]
                                             ? "bg-reserved"
                                             : "bg-chair-reg"
@@ -578,7 +577,7 @@ export default function Home() {
                                     3
                                 </div>
                                 <div
-                                    className={` w-12 h-8 rounded-t-lg text-center ${
+                                    className={` w-12 h-8 rounded-t-lg text-center transition-all duration-300 ${
                                         table.seat[4]
                                             ? "bg-reserved"
                                             : "bg-chair-reg"
@@ -592,7 +591,7 @@ export default function Home() {
                             </div>
                             <div id="chair" className="flex justify-between">
                                 <div
-                                    className={` w-12 h-8 rounded-b-lg text-center ${
+                                    className={` w-12 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                         table.seat[5]
                                             ? "bg-reserved"
                                             : "bg-chair-reg"
@@ -601,7 +600,7 @@ export default function Home() {
                                     5
                                 </div>
                                 <div
-                                    className={` w-12 h-8 rounded-b-lg text-center ${
+                                    className={` w-12 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                         table.seat[6]
                                             ? "bg-reserved"
                                             : "bg-chair-reg"
@@ -610,7 +609,7 @@ export default function Home() {
                                     6
                                 </div>
                                 <div
-                                    className={` w-12 h-8 rounded-b-lg text-center ${
+                                    className={` w-12 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                         table.seat[7]
                                             ? "bg-reserved"
                                             : "bg-chair-reg"
@@ -619,7 +618,7 @@ export default function Home() {
                                     7
                                 </div>
                                 <div
-                                    className={` w-12 h-8 rounded-b-lg text-center ${
+                                    className={` w-12 h-8 rounded-b-lg text-center transition-all duration-300 ${
                                         table.seat[8]
                                             ? "bg-reserved"
                                             : "bg-chair-reg"

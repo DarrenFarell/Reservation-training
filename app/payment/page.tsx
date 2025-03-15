@@ -25,7 +25,7 @@ export default function Pay() {
                 <h1 className="text-text text-4xl">A'Resto</h1>
             </div>
             <div className=" min-h-[100vh] w-full bg-background px-20 py-10">
-                <div className="w-2/3 mx-auto">
+                <div className="w-2/3 mx-auto pb-10">
                     {choosenSeats.map((data: any, index: number) => {
                         return (
                             <div
@@ -36,7 +36,7 @@ export default function Pay() {
                                     Table {data.table} Seat {data.seat}
                                 </p>
                                 <p className="text-text text-2xl">
-                                    {Number("1") < 7 ? "VIP" : "Reguler"}
+                                    {data.table < 7 ? "VIP" : "Reguler"}
                                 </p>
                                 <p className="text-text text-3xl">
                                     Rp: {data.table < 7 ? "250,000" : "150,000"}
