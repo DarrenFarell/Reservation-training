@@ -1,7 +1,6 @@
-export const tableVip1 = [
-    {
+export const fullData = [{
         id: 1,
-        type: "VIP",
+        type: "vip",
         seat: {
             1: false,
             2: false,
@@ -13,7 +12,7 @@ export const tableVip1 = [
     },
     {
         id: 2,
-        type: "VIP",
+        type: "regular",
         seat: {
             1: false,
             2: false,
@@ -21,11 +20,13 @@ export const tableVip1 = [
             4: false,
             5: false,
             6: false,
+            7: false,
+            8: false,
         },
     },
     {
         id: 3,
-        type: "VIP",
+        type: "vip",
         seat: {
             1: false,
             2: false,
@@ -34,13 +35,9 @@ export const tableVip1 = [
             5: false,
             6: false,
         },
-    },
-];
-
-export const tableVip2 = [
-    {
+    },{
         id: 4,
-        type: "VIP",
+        type: "vip",
         seat: {
             1: false,
             2: false,
@@ -52,7 +49,7 @@ export const tableVip2 = [
     },
     {
         id: 5,
-        type: "VIP",
+        type: "vip",
         seat: {
             1: false,
             2: false,
@@ -64,7 +61,7 @@ export const tableVip2 = [
     },
     {
         id: 6,
-        type: "VIP",
+        type: "vip",
         seat: {
             1: false,
             2: false,
@@ -73,11 +70,7 @@ export const tableVip2 = [
             5: false,
             6: false,
         },
-    },
-];
-
-export const tableReg = [
-    {
+    },{
         id: 7,
         type: "Regular",
         seat: {
@@ -189,4 +182,13 @@ export const tableReg = [
             8: false,
         },
     },
-];
+]
+
+
+
+
+const dummy = [{
+    table: "10",
+    type: "vip",
+    seat: [2,3,4,5]
+}]
