@@ -25,7 +25,7 @@ export default function Table(props: any) {
         className={`w-full h-20 flex items-center justify-center font-bold ${
           props.type === "vip"
             ? " bg-table-vip  text-2xl text-text"
-            : " bg-table-reg  text-1xl text-slate-800"
+            : " bg-table-reg  text-xl text-slate-800"
         }`}
       >
         {props.id} {props.type}

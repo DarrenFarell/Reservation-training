@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair } from "next/font/google";
+import { Playfair, Big_Shoulders_Inline_Display } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair({
   variable: "--font-playfair-sans",
+  subsets: ["latin"],
+});
+const big = Big_Shoulders_Inline_Display({
+  variable: "--font-Big_Shoulders_Display-sans",
   subsets: ["latin"],
 });
 

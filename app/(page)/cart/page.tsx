@@ -19,6 +19,12 @@ export default function Cart() {
     if (storedSeats) {
       setChoosen(JSON.parse(storedSeats)); // Restore data
     }
+
+    setChoosen((prev) => {
+        return prev.map((data,index) => {
+            return {...data, seat: data.seat.sort()}
+        })
+    })
   }, []);
 
   function handleDelete(id: any) {

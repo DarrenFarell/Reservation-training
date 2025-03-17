@@ -21,7 +21,6 @@ export const fullData = [{
             5: false,
             6: false,
             7: false,
-            8: false,
         },
     },
     {
