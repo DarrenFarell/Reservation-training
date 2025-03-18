@@ -6,7 +6,7 @@ export default function Table(props: any) {
     return props.onTableCLick(props.id, props.type);
   }
   return (
-    <div className={`w-60 mx-10 ${props.py}`} onClick={() => handleTableClick()}>
+    <div className={`w-60 mx-10 ${props.py} hover:cursor-pointer`} onClick={() => handleTableClick()}>
       {props.type === "vip" ? (
         <div id="chair" className="flex justify-between">
           {Object.entries(props.isChoose).map(([key, value], index) => 

@@ -26,7 +26,8 @@ export default function PopUp(props:any) {
           <div id="chair" className="flex justify-between">
             {Object.entries(props.data[props.table -1]?.seat || {}).map(([key, value], index) => 
                         index < 3 ?<div
-                        className={` w-30 h-13 rounded-t-lg text-center ${
+            key={index}
+                        className={` w-30 h-13 rounded-t-lg text-center hover:cursor-pointer ${
                           value
                             ? "bg-reserved"
                             : "bg-chair-vip"
@@ -44,7 +45,8 @@ export default function PopUp(props:any) {
           <div id="chair" className="flex justify-between">
           {Object.entries(props.data[props.table -1]?.seat || {}).map(([key, value], index) => 
                         index > 2 ?<div
-                        className={` w-30 h-13 rounded-b-lg text-center ${
+          key={index}
+                        className={` w-30 h-13 rounded-b-lg text-center hover:cursor-pointer ${
                           value
                             ? "bg-reserved"
                             : "bg-chair-vip"

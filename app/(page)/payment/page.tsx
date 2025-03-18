@@ -1,6 +1,8 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
+import List from "@/app/component/(payment)/list-payment";
+
 
 export default function Pay() {
   const searchParams = useSearchParams();
@@ -22,35 +24,13 @@ export default function Pay() {
         <div className="w-2/3 mx-auto pb-10">
           {form.map((data: any, index: number) => {
             return (
-              <div className="py-4 px-5 mb-8" key={index}>
-                <div
-                  key={index}
-                  className="w-full rounded flex justify-between items-center"
-                >
-                  <p className="text-text text-3xl">Table {data.table}</p>
-                  <p className="text-text text-3xl">{data.type}</p>
-                  <p className="text-text text-3xl">
-                    Rp:{" "}
-                    {(
-                      data.seat.length * (data.type == "vip" ? 250000 : 150000)
-                    ).toLocaleString()}
-                  </p>
-                </div>
-                {data.seat.map((i: any, index: any) => {
-                  return (
-                    <div className="flex justify-between items-center mx-auto px-5" key={index}>
-                      <p className="text-text mt-3 text-2xl">seat {i}</p>
-                      <p className="text-text mt-3 text-2xl">Rp: {data.type == "regular" ? "150,000": "250,000"}</p>
-                    </div>
-                  );
-                })}
-              </div>
+              <List data={data} key={index}/>
             );
           })}
         </div>
         <div className="w-full fixed bottom-0 bg-table-vip left-0 p-5">
           <p className="text-center text-2xl">
-            Total: {totalPrice.toLocaleString()}
+            Total: Rp {totalPrice.toLocaleString()}
           </p>
         </div>
       </div>
