@@ -1,12 +1,11 @@
 "use client";
 
-import { FaCartPlus } from "react-icons/fa";
 import { fullData } from "./lib/data";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Table from "./component/table";
 import PopUp from "./component/popup";
 import PopUpReg from "./component/popup-reg";
+import CartButton from "@/app/component/cart-button";
 
 type data = { id: number; type: string; seat: any };
 
@@ -16,7 +15,6 @@ export default function Home() {
     const [regClick, setRegClick] = useState(false);
     const [table, setTable] = useState();
     const [choosen, setChoosen] = useState<any[]>([]);
-    const router = useRouter();
 
     function handleTableClick(id: any, type: any) {
         setTable(() => {
@@ -89,22 +87,11 @@ export default function Home() {
         <div className="">
             <div className="bg-[#3E1E1A] w-full py-4 px-20 flex justify-between items-center">
                 <h1 className="text-text text-4xl">A'Resto</h1>
-                <div
-                    className="cursor-pointer"
-                    onClick={() => {
-                        localStorage.setItem(
-                            "choosenSeats",
-                            JSON.stringify(choosen)
-                        );
-                        router.push("/cart");
-                    }}
-                >
-                    <FaCartPlus className="text-text text-2xl" />
-                </div>
+                <CartButton choosen={choosen}/>
             </div>
 
             <div className="bg-background w-full  px-20 ">
-                {/* start pop-up  */}
+
                 <PopUp
                     handleExitPop={handleExitPop}
                     onSeatClick={handleSetSeat}
@@ -112,6 +99,7 @@ export default function Home() {
                     data={data}
                     table={table}
                 />
+
                 <PopUpReg
                     handleExitPop={handleExitPop}
                     onSeatClick={handleSetSeat}
@@ -119,10 +107,8 @@ export default function Home() {
                     data={data}
                     table={table}
                 />
-                {/* end pop-up  */}
 
                 <div className=" flex items-center justify-between">
-                    {/* left side */}
                     <div className="">
                         {data.map((table, index) => {
                             return index < 3 ? (
@@ -137,17 +123,13 @@ export default function Home() {
                             ) : null;
                         })}
                     </div>
-                    {/* end left side */}
 
-                    {/* start center side */}
                     <div>
                         <div className="w-[600] h-[500] bg-stage rounded-lg flex justify-center items-center text-3xl text-text font-bold">
                             Stage
                         </div>
                     </div>
-                    {/* end center side */}
 
-                    {/* start right side */}
                     <div>
                         {data.map((table, index) => {
                             return index > 2 && index < 6 ? (
@@ -162,11 +144,9 @@ export default function Home() {
                             ) : null;
                         })}
                     </div>
-                    {/* end right side */}
                 </div>
             </div>
 
-            {/* start regular */}
             <div className="bg-background w-full  px-20 py-10 grid grid-cols-4 gap-10">
                 {data.map((table, index) => {
                     return index > 5 ? (
@@ -181,7 +161,6 @@ export default function Home() {
                     ) : null;
                 })}
             </div>
-            {/* end regular */}
         </div>
     );
 }

@@ -85,7 +85,7 @@ export const fullData = [{
     },
     {
         id: 8,
-        type: "Regular",
+        type: "vip",
         seat: {
             1: false,
             2: false,
@@ -93,13 +93,12 @@ export const fullData = [{
             4: false,
             5: false,
             6: false,
-            7: false,
-            8: false,
+           
         },
     },
     {
         id: 9,
-        type: "Regular",
+        type: "vip",
         seat: {
             1: false,
             2: false,
@@ -107,8 +106,7 @@ export const fullData = [{
             4: false,
             5: false,
             6: false,
-            7: false,
-            8: false,
+            
         },
     },
     {
