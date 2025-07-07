@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} antialiased`}
       >
-        {children}
+        {childern}
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { FaCartPlus } from "react-icons/fa";
 
 
@@ -9,7 +9,7 @@ export default function CartButton(props:any) {
         <div
             className="cursor-pointer"
             onClick={() => {
-                localStorage.setItem("choosenSeats", JSON.stringify(props.choosen));
+                localStorage.setItem("choosenseats", JSON.stringify(props.choosen));
                 router.push("/cart");
             }}
         >

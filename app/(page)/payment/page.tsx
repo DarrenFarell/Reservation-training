@@ -1,7 +1,7 @@
 import List from "@/app/component/list";
 
-export default function Pay({ searchParams }: { searchParams: { data?: string } } ) {
-    const data = searchParams.data;
+export default function Pay({ Params }: { Params: { data?: string } } ) {
+    const data = Params.data;
     const choosenSeats = data ? JSON.parse(decodeURIComponent(data)) : [];
     const form = choosenSeats;
 

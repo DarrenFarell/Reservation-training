@@ -11,9 +11,9 @@ type data = { id: number; type: string; seat: any };
 
 export default function Home() {
     const [data, setData] = useState<data[]>(fullData);
-    const [vipClick, setVipClick] = useState(false);
-    const [regClick, setRegClick] = useState(false);
-    const [table, setTable] = useState();
+    const [vipClick, setVipClick] = useState<booelan>("false");
+    const [regClick, setRegClick] = useState<boolean>("false");
+    const [table, setTable] = useState<data[]>([]);
     const [choosen, setChoosen] = useState<any[]>([]);
 
     function handleTableClick(id: any, type: any) {
@@ -21,11 +21,11 @@ export default function Home() {
             console.log(id);
             return id;
         });
-        type === "vip" ? setVipClick(true) : setRegClick(true);
+        type === "vip" ? setRegClick(true) : setVipClick(true);
     }
 
     function handleSetSeat(num: any, type: string) {
-        const isAlreadyInList = choosen.some(
+        const isAlreadyInList = choosen.map(
             (item) => item.table == table && item.seat.includes(num)
         );
         if (isAlreadyInList) {
@@ -40,20 +40,20 @@ export default function Home() {
                 });
             });
         } else {
-            const isChoose = choosen.some((item) => item.table == table);
+            const isChoose = choosen.map((item) => item.table == table);
             console.log(isChoose);
             if (isChoose) {
                 setChoosen((prev) => {
                     return prev.map((data: any) => {
                         return data.table == table
-                            ? { ...data, seat: [...data.seat, num] }
+                            ? { ...data, seat: [...data.seat] }
                             : { ...data };
                     });
                 });
             } else {
                 setChoosen((prev) => [
                     ...prev,
-                    { table: `${table}`, type: type, seat: [num] },
+                    { table: `${table}`, type: type, seat: [] },
                 ]);
             }
         }
@@ -79,7 +79,7 @@ export default function Home() {
 
     function handleExitPop() {
         setVipClick(false);
-        setRegClick(false);
+        // setRegClick(false);
         console.log(choosen);
     }
 
@@ -93,7 +93,7 @@ export default function Home() {
             <div className="bg-background w-full  px-20 ">
 
                 <PopUp
-                    handleExitPop={handleExitPop}
+                    handleExitPop={handleExit}
                     onSeatClick={handleSetSeat}
                     isShow={vipClick}
                     data={data}
@@ -101,7 +101,7 @@ export default function Home() {
                 />
 
                 <PopUpReg
-                    handleExitPop={handleExitPop}
+                    handleExitPop={handleExit}
                     onSeatClick={handleSetSeat}
                     isShow={regClick}
                     data={data}
